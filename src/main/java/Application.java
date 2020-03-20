@@ -21,10 +21,12 @@ public class Application {
         employee.setFirstName("Maxim");
         employee.setLastName("Steponenko");
         employee.setAge(30);
+        employee.setAddress(address);
 
         Pets pets = new Pets();
         pets.setName("Bobik");
         pets.setAge(13);
+        pets.setEmployee(employee);
 
         Set<Pets> pets1 = new HashSet<>();
         pets1.add(pets);

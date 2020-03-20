@@ -18,7 +18,7 @@ import java.util.Set;
 @Table(name = "EMPLOYEE")
 public class Employee {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(name = "FIRST_NAME")
@@ -33,7 +33,7 @@ public class Employee {
     @OneToOne(cascade = CascadeType.ALL)
     private Address address;
 
-    @OneToMany(mappedBy = "employee", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "employee", cascade = CascadeType.ALL,fetch = FetchType.LAZY)
     private Set<Pets> pets;
 
     public Set<Pets> getPets() {
@@ -95,9 +95,10 @@ public class Employee {
         return "Employee{" +
                 "id=" + id +
                 ", firstName='" + firstName + '\'' +
-                ", lostName='" + lastName + '\'' +
+                ", lastName='" + lastName + '\'' +
                 ", age=" + age +
-                ", addressID=" + /*addressID +*/
+                ", address=" + address +
+                ", pets=" + pets +
                 '}';
     }
 }

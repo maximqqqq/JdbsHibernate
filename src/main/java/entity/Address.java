@@ -8,7 +8,7 @@ import javax.persistence.*;
 public class Address {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(name = "COUNTRY")
@@ -17,20 +17,13 @@ public class Address {
     @Column(name = "CITY")
     private String city;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    public Employee employee;
+//    @OneToOne(cascade = CascadeType.ALL,mappedBy = "address",fetch = FetchType.LAZY,optional = false)
+//    public Employee employee;
 
     public Address() {
 
     }
 
-//    public Employee getEmployee() {
-//        return employee;
-//    }
-//
-//    public void setEmployee(Employee employee) {
-//        this.employee = employee;
-//    }
 
     public Long getId() {
         return id;
