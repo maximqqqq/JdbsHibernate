@@ -17,9 +17,6 @@ public class Address {
     @Column(name = "CITY")
     private String city;
 
-//    @OneToOne(cascade = CascadeType.ALL,mappedBy = "address",fetch = FetchType.LAZY,optional = false)
-//    public Employee employee;
-
     public Address() {
 
     }
